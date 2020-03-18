@@ -1,0 +1,46 @@
+.main
+  .main__header
+    .main__header__left-box
+      .main__header__left-box__current-group
+        ヤバイ
+      .main__header__left-box__member-list
+        member : neo
+    .main__header__right-box
+      = link_to root_path do
+        .main__header__right-box__icon
+          Edit
+  .main__contents
+    .main__contents__box
+      .main__contents__leftbox
+        マキシマム
+      .main__contents__right-box  
+        2020/2/27(Thu) 12:35:31
+    .main__contents__under-box
+      詰み
+    .main__contents__box
+      .main__contents__leftbox
+        マキシマム
+      .main__contents__right-box  
+        2020/2/27(Thu) 12:35:31
+    .main__contents__under-box
+      詰み
+  -# .main__footer
+  -#   .main__footer__contents
+  -#     .main__footer__contents__text
+  -#       type a message
+  -#     .main__footer__contents__image
+  -#      %label{class: "input-box__image"}
+  -#       = icon('fas', 'image')
+  -#     .btn send
+
+  .main__footer
+    %form#new_message.new_message{"accept-charset" => "UTF-8", :action => "/groups/22547/messages", :enctype => "multipart/form-data", :method => "post"}
+      %input{:name => "utf8", :type => "hidden", :value => "✓"}/
+      %input{:name => "authenticity_token", :type => "hidden", :value => "pPTbrRGnnbTTJq7NC5X+AYtkSpnlghvE0qTnfOgOHYQabNvieXZazUIT5WdSnyMDlbyoNohfd7qlhwpeq0fKdA=="}/
+      .input-box
+        %input#message_content.input-box__text{:name => "message[content]", :placeholder => "type a message", :type => "text"}/
+        %label.input-box__image{:for => "message_image"}
+          = icon('fas', 'image')
+          %input#message_image.input-box__image__file{:name => "message[image]", :type => "file"}/
+      %input.submit-btn{"data-disable-with" => "Send", :name => "commit", :type => "submit", :value => "Send"}/
+
